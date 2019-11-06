@@ -35,6 +35,7 @@ class Lock:
         GPIO.setup(pin,GPIO.OUT)
         self.locklink = GPIO.PWM(pin,50)
         self.locklink.start(7.5)
+        #self.locklink.ChangeDutyCycle(0)
         self.locked = True
         atexit.register(self.destroy)
 
@@ -44,6 +45,8 @@ class Lock:
     '''
     def lock(self):
         self.locklink.ChangeDutyCycle(7.5)
+        time.sleep(1)
+        self.locklink.ChangeDutyCycle(0)
         self.locked = True
         
     '''
@@ -51,6 +54,8 @@ class Lock:
     '''
     def unlock(self):
         self.locklink.ChangeDutyCycle(12.5) #can also use 2.5 here
+        time.sleep(1)
+        self.locklink.ChangeDutyCycle(0)
         self.locked = False
 
     '''
