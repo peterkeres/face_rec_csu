@@ -37,7 +37,7 @@ This project was selected to be presented at the ACM Mid-Southeast Conference in
 
 Our power-point can be found [here](resources/report.pptx)
 
-![Our Poster](resoucres/poster.png)
+![Our Poster](resources/poster.png)
 
 ### Resources used
 
